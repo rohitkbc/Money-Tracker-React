@@ -37,7 +37,7 @@ function IncomeGraph() {
       <div class="card-body">
         <h5 class="card-title">Expense Chart</h5>
         <p class="card-text text-success" style={{ fontWeight: "bold" }}>
-          <Doughnut data={data} style={{ width: "20rem" }} />
+          <Doughnut data={data} style={{ width: "auto" }} />
         </p>
       </div>
     </div>

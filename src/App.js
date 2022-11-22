@@ -14,26 +14,26 @@ function App() {
       <NavBar />
       <div className="container">
         <div class="row">
-          <div class="col-4 mt-4">
+          <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
             <Income />
           </div>
-          <div class="col mt-4">
+          <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
             <Expense />
           </div>
-          <div class="col mt-4">
+          <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
             <TotalBalance />
           </div>
         </div>
 
-        <div className="row">
-          <div class="col-4 mt-4">
+        <div className="row flex">
+          <div class="col-lg-4 mt-4">
             <TransactionTable />
             <TransactionCard />
           </div>
-          <div class="col-4 mt-4">
+          <div class="col-lg-4 col-md-6 mt-4">
             <IncomeGraph />
           </div>
-          <div class="col-4 mt-4">
+          <div class="col-lg-4 col-md-6 mt-4">
             <ExpenseGraph />
           </div>
         </div>

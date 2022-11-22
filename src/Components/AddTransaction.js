@@ -46,6 +46,7 @@ function AddTransaction() {
               type="text"
               class="form-control"
               id='amount'
+              placeholder="Enter Amount"
             />
           </div>
           <div className="col">
