@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Money-Tracker-MERN/static/css/main.44f8b8b5.css",
+    "main.js": "/Money-Tracker-MERN/static/js/main.19d586da.js",
+    "index.html": "/Money-Tracker-MERN/index.html",
+    "main.44f8b8b5.css.map": "/Money-Tracker-MERN/static/css/main.44f8b8b5.css.map",
+    "main.19d586da.js.map": "/Money-Tracker-MERN/static/js/main.19d586da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44f8b8b5.css",
+    "static/js/main.19d586da.js"
+  ]
+}
