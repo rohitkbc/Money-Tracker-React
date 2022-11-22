@@ -49,7 +49,7 @@ function AddTransaction() {
               placeholder="Enter Amount"
             />
           </div>
-          <div className="col">
+          <div className="col-4">
             <button type="Submit" class="btn btn-success">
               Submit
             </button>
