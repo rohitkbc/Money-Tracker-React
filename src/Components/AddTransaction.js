@@ -1,5 +1,8 @@
-function AddTransaction() {
+// import { useState } from "react";
 
+function AddTransaction() {
+  // const [items, setItems] = useState([]);
+  var data = []
   const myFun = (e) => {
     e.preventDefault()
 
@@ -14,12 +17,17 @@ function AddTransaction() {
     }
 
     console.log(obj);
+    data.push(obj)
+
+    // let oldData = JSON.parse(localStorage.getItem('items'))
+    localStorage.setItem('items', JSON.stringify(data));
 
     document.getElementById('type').value = ""
     document.getElementById('date').value = ""
     document.getElementById('amount').value = ""
 
   }
+
   return (
     <div>
       <form onSubmit={myFun}>

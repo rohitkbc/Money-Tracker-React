@@ -1,12 +1,11 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useEffect, useState } from "react";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
     {
-      // label: "# of Votes",
       data: [5000, 1000, 2000, 3000, 2000],
       backgroundColor: [
         "rgba(11, 218, 81, 0.5)",
@@ -28,6 +27,15 @@ export const data = {
 };
 
 function IncomeGraph() {
+
+  const [mydataset, setmyDataset] = useState([]);
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("items"));
+    if (items) {
+      setmyDataset(items);
+    }
+  }, [mydataset]);
+
   return (
     <div class="card text-center" >
       <div class="card-body">
