@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Money-Tracker-MERN/static/css/main.44f8b8b5.css",
-    "main.js": "/Money-Tracker-MERN/static/js/main.a9c4c892.js",
+    "main.js": "/Money-Tracker-MERN/static/js/main.9e8a8e3a.js",
     "index.html": "/Money-Tracker-MERN/index.html",
     "main.44f8b8b5.css.map": "/Money-Tracker-MERN/static/css/main.44f8b8b5.css.map",
-    "main.a9c4c892.js.map": "/Money-Tracker-MERN/static/js/main.a9c4c892.js.map"
+    "main.9e8a8e3a.js.map": "/Money-Tracker-MERN/static/js/main.9e8a8e3a.js.map"
   },
   "entrypoints": [
     "static/css/main.44f8b8b5.css",
-    "static/js/main.a9c4c892.js"
+    "static/js/main.9e8a8e3a.js"
   ]
 }
