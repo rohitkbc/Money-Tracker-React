@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function Expense() {
+function Expense(props) {
   const [col, setCol] = useState("");
+
+  const [amount, setAmount] = useState("")
+
+  useEffect(() => {
+    var sum = 0;
+    props.data.forEach(item => {
+      if (item.type == "Expense") {
+        sum += parseInt(item.amount)
+      }
+    });
+    setAmount(sum)
+  }, [props.data])
+
   return (
     <div onMouseEnter={() => setCol("#F1F1F1")} onMouseLeave={() => setCol("")}>
       <div
-        class="card text-center"
+        className="card text-center"
         style={{ width: "auto", backgroundColor: `${col}` }}
       >
-        <div class="card-body">
-          <p class="card-text" style={{ fontWeight: "bold" }}>
+        <div className="card-body">
+          <p className="card-text" style={{ fontWeight: "bold" }}>
             Expense
           </p>
-          <h5 class="card-title text-danger">$ 20,000</h5>
+          <h5 className="card-title text-danger">$ {amount}</h5>
         </div>
       </div>
     </div>

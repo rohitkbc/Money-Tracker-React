@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
+function TransactionTable(props) {
 
-function TransactionTable() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("items"));
-    if (items) {
-      setData(items);
-    }
-  }, [data]);
   return (
     <div style={{ overflow: "auto", height: "250px" }}>
-      <table class="table table-hover text-center">
+      <table className="table table-hover text-center">
         <thead className="table-dark sticky-top">
           <tr>
             <th scope="col">#</th>
@@ -21,9 +12,9 @@ function TransactionTable() {
           </tr>
         </thead>
         <tbody>
-          {data.map((i) => {
+          {props.data.map((i) => {
             return <tr>
-              <th scope="row">{data.indexOf(i) + 1}</th>
+              <th scope="row">{props.data.indexOf(i) + 1}</th>
               <td>{i.type}</td>
               <td>{i.date}</td>
               <td>{i.amount}</td>

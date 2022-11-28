@@ -1,8 +1,4 @@
-// import { useState } from "react";
-
-function AddTransaction() {
-  // const [items, setItems] = useState([]);
-  var data = []
+function AddTransaction(props) {
   const myFun = (e) => {
     e.preventDefault()
 
@@ -16,11 +12,7 @@ function AddTransaction() {
       amount : amount,
     }
 
-    console.log(obj);
-    data.push(obj)
-
-    // let oldData = JSON.parse(localStorage.getItem('items'))
-    localStorage.setItem('items', JSON.stringify(data));
+    props.set(obj);
 
     document.getElementById('type').value = ""
     document.getElementById('date').value = ""
@@ -29,11 +21,10 @@ function AddTransaction() {
   }
 
   return (
-    <div>
       <form onSubmit={myFun}>
-        <div class="row">
-          <div class="col">
-            <select class="form-select" id='type'>
+        <div className="row">
+          <div className="col">
+            <select className="form-select" id='type'>
               <option disabled selected value="">
                 Transaction Type
               </option>
@@ -41,30 +32,29 @@ function AddTransaction() {
               <option value="Expense">Expense</option>
             </select>
           </div>
-          <div class="col">
-            <input type="date" class="form-control" id='date'/>
+          <div className="col">
+            <input type="date" className="form-control" id='date'/>
           </div>
         </div>
-        <div class="row mt-2">
-          <div class="col input-group">
-            <span class="input-group-text" style={{ backgroundColor: "white" }}>
+        <div className="row mt-2">
+          <div className="col input-group">
+            <span className="input-group-text" style={{ backgroundColor: "white" }}>
               $
             </span>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id='amount'
               placeholder="Enter Amount"
             />
           </div>
           <div className="col-4">
-            <button type="Submit" class="btn btn-success">
+            <button type="Submit" className="btn btn-success">
               Submit
             </button>
           </div>
         </div>
       </form>
-    </div>
   );
 }
 

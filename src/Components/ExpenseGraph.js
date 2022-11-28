@@ -1,15 +1,23 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useEffect, useState } from "react";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function IncomeGraph() {
+function IncomeGraph(props) {
+  const [mydataset, setmyDataset] = useState([]);
+
+  useEffect(() => {
+    props.data.forEach(item => {
+      if (item.type === "Expense") {
+        console.log("Expense: "+ item.amount);
+      }
+    });
+  }, [props.data]);
 
   var incomeData = [5000, 1000, 2000, 3000, 2000];
   const data = {
-    // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
       {
-        // label: "# of Votes",
         data: incomeData,
         backgroundColor: [
           "rgba(233, 116, 81, 0.5)",
@@ -31,10 +39,10 @@ function IncomeGraph() {
   };
 
   return (
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Expense Chart</h5>
-        <p class="card-text text-success" style={{ fontWeight: "bold" }}>
+    <div className="card text-center">
+      <div className="card-body">
+        <h5 className="card-title">Expense Chart</h5>
+        <p className="card-text text-success" style={{ fontWeight: "bold" }}>
           <Doughnut data={data} style={{ width: "auto" }} />
         </p>
       </div>
