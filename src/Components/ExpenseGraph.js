@@ -22,19 +22,24 @@ function IncomeGraph(props) {
           "rgba(250, 160, 160, 1)",
           "rgba(227, 115, 94, 1)",
         ],
-        borderWidth: 1,
+        borderWidth: 1.5,
+        hoverBorderColor: "#f5f6fa",
       },
     ],
+    labels: [],
   });
 
   useEffect(() => {
     var amountArr = [];
-    props.data.forEach(item => {
+    var labelArr = [];
+
+    props.data.forEach((item) => {
       if (item.type === "Expense") {
         amountArr.push(item.amount);
+        labelArr.push(item.cat);
       }
     });
-    
+
     setmyDataset({
       datasets: [
         {
@@ -53,10 +58,12 @@ function IncomeGraph(props) {
             "rgba(250, 160, 160, 1)",
             "rgba(227, 115, 94, 1)",
           ],
-          borderWidth: 1,
+          borderWidth: 1.5,
+          hoverBorderColor: "#f5f6fa",
         },
       ],
-    })
+      labels: labelArr,
+    });
   }, [props.data]);
 
   return (

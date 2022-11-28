@@ -9,38 +9,48 @@ import TransactionCard from "./Components/AddTransactionCard";
 import { useState } from "react";
 
 function App() {
-  var [transaction, setTransaction] = useState([])
+  var [transaction, setTransaction] = useState([]);
 
   var saveTransaction = function (item) {
-    setTransaction([...transaction, item])
+    setTransaction([...transaction, item]);
     console.log([...transaction, item]);
-  }
+  };
+
+  var removeTrans = function (index) {
+    console.log(index);
+    if (index !== -1)
+      setTransaction([
+        ...transaction.slice(0, index),
+        ...transaction.slice(index, transaction.length - 1),
+      ]);
+  };
+
   return (
     <div>
       <NavBar />
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Income  data = {transaction} />
+            <Income data={transaction} />
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <Expense  data = {transaction} />
+            <Expense data={transaction} />
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 mt-4">
-            <TotalBalance data = {transaction} />
+            <TotalBalance data={transaction} />
           </div>
         </div>
 
         <div className="row flex">
           <div className="col-lg-4 mt-4">
-            <TransactionTable data = {transaction} />
-            <TransactionCard save = {saveTransaction} />
+            <TransactionTable data={transaction} remove={removeTrans} />
+            <TransactionCard save={saveTransaction} />
           </div>
           <div className="col-lg-4 col-md-6 mt-4">
-            <IncomeGraph data = {transaction} />
+            <IncomeGraph data={transaction} />
           </div>
           <div className="col-lg-4 col-md-6 mt-4">
-            <ExpenseGraph data = {transaction} />
+            <ExpenseGraph data={transaction} />
           </div>
         </div>
       </div>

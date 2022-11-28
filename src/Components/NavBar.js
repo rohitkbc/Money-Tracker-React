@@ -48,7 +48,7 @@ function Form() {
                   src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
                   width="40"
                   height="40"
-                  className="rounded-circle"
+                  className="rounded-circle ms-2"
                 ></img>
               </a>
 
