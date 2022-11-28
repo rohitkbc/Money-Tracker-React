@@ -18,11 +18,7 @@ function App() {
 
   var removeTrans = function (index) {
     console.log(index);
-    if (index !== -1)
-      setTransaction([
-        ...transaction.slice(0, index),
-        ...transaction.slice(index, transaction.length - 1),
-      ]);
+    setTransaction([...transaction.filter((e) => e.id !== index)]);
   };
 
   return (

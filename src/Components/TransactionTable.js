@@ -2,6 +2,7 @@ import incImg from "./income.png"
 import expImg from "./expense.png"
 import remImg from "./remove.png"
 
+
 function TransactionTable(props) {
   const remove = (index) => {
     props.remove(index)
@@ -25,7 +26,7 @@ function TransactionTable(props) {
               <td>{i.cat}</td>
               <td>{i.date}</td>
               <td>{i.amount}</td>
-              <td><img src={remImg} onClick={() => remove(props.data.indexOf(i))} style={{cursor: "pointer"}}/></td>
+              <td><img src={remImg} onClick={() => remove(i.id)} style={{cursor: "pointer"}}/></td>
             </tr>
           })}
         </tbody>

@@ -11,7 +11,10 @@ function AddTransaction(props) {
     var amount = document.getElementById("amount").value;
     var cat = document.getElementById("category").value;
 
+    let uuid = crypto.randomUUID();
+
     var obj = {
+      id: uuid,
       type: type,
       date: date,
       amount: amount,

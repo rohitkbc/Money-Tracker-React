@@ -35,6 +35,13 @@ function IncomeGraph(props) {
 
     props.data.forEach((item) => {
       if (item.type === "Expense") {
+        if (labelArr.includes(item.cat)) {
+          var i = labelArr.indexOf(item.cat)
+          var amount = parseInt(amountArr[i]) + parseInt(item.amount)
+          amountArr[i] = amount
+          console.log(typeof amount);
+          return
+        }
         amountArr.push(item.amount);
         labelArr.push(item.cat);
       }
